@@ -1,8 +1,8 @@
 # BlankConsoleApp
 
-This project is a template for C code in Visual Studio 2019 set up for two methods of unit tests
+This project is a template for C (not C++, irrespective of GitHub's language analysis) code in Visual Studio 2019 set up for two methods of unit tests
  - MS Test
- - minunint
+ - minunit
  
 The idea is that you start by checking out a copy of this repo, then rename the app projects, then replace the sample_funcs files with your own and add your own tests.
 
@@ -30,7 +30,7 @@ The project is setup to run tests using either MS Test or minunit.
 ### Your code-under-test
 If testing a few small functions, you can just add them to sample_funcs.c and prototypes for the externally visible ones (non static) to sample_funcs.h
 
-If you want to test complete files, add them to the (renamed) BlankConsoleApp project and add them to the include list in (renamed) BlankUnitTest.cpp. In this file, the #include list needs the C files, not the H files.  
+If you want to test complete files, add them to the (renamed) BlankConsoleApp project and add them to the #include list in (renamed) BlankUnitTest.cpp. In this file, the #include list needs the C files, not the H files.  
 Then add the H files to the #includes in mu_test_main.c
 
 ### Adding Tests
@@ -39,7 +39,7 @@ Unfortunately the test syntax is slightly different between minunit and MS Test 
 #### Adding tests for MS Test
 In (renamed) BlankUnitTest.cpp, copy and edit the sample test method, making sure that each test method has a unique name within the test class. This name will appear in the Test Explorer but does not appear anywhere else in code. The MS Test framework does the work of discovering it, running the test and listing it, when you ask it to run.
 
-The only C++ you need to use is  Assert, likely only the AreEqual and AreNotEqual methods will suffice. If you need it, the complete list of methods are documented here https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference?view=vs-2019#general_asserts
+The only C++ you need to use is Assert, likely only the AreEqual and AreNotEqual methods will suffice. If you need to know the complete list of methods for Assert, they are documented here https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference?view=vs-2019#general_asserts
 
 #### Adding tests for minunit
 In mu_test_main.c, copy and edit the mu_sampletest1() function. You can add custom messages for each assert failure.  
