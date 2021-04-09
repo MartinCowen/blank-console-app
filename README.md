@@ -34,7 +34,7 @@ If you want to test complete files, add them to the (renamed) BlankConsoleApp pr
 Then add the H files to the #includes in mu_test_main.c
 
 ### Adding Tests
-Unfortunately the test syntax is slightly different between minunit and MS Test so you can't repurpose the exact same tests. There is also the problem that one is C and one is C++ and there are incompatibilities between those.
+Unfortunately the test syntax is slightly different between minunit and MS Test so you can't repurpose the exact same tests. There is also the problem that one is C and one is C++ and there are incompatibilities between those. However, you can use my [Test Formatter](https://github.com/MartinCowen/test-formatter) Windows application to assist with conversion in either direction.
 
 #### Adding tests for MS Test
 In (renamed) BlankUnitTest.cpp, copy and edit the sample test method, making sure that each test method has a unique name within the test class. This name will appear in the Test Explorer but does not appear anywhere else in code. The MS Test framework does the work of discovering it, running the test and listing it, when you ask it to run.
